@@ -1,5 +1,7 @@
 import { GraduationCap, Heart, Users, Briefcase, Home, Sprout, Book, Truck, Sun, Wifi, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../../../context/LanguageContext";
+import { getTranslation } from "../../../../utils/translations";
 
 const getHoverStyle = (bgColor) => {
     const styles = {
@@ -36,24 +38,81 @@ const CategoryCard = ({ icon: Icon, title, description, color }) => (
 
 const Categories = () => {
     const navigate = useNavigate();
+    const { currentLanguage } = useLanguage();
+    
     const categories = [
-        { icon: GraduationCap, title: "Education", description: "50+ schemes available", color: { text: "text-blue-500", bg: "blue-500" } },
-        { icon: Heart, title: "Healthcare", description: "40+ schemes available", color: { text: "text-red-500", bg: "red-500" } },
-        { icon: Users, title: "Women Empowerment", description: "30+ schemes available", color: { text: "text-purple-500", bg: "purple-500" } },
-        { icon: Briefcase, title: "Employment", description: "45+ schemes available", color: { text: "text-yellow-500", bg: "yellow-500" } },
-        { icon: Home, title: "Housing", description: "25+ schemes available", color: { text: "text-green-500", bg: "green-500" } },
-        { icon: Sprout, title: "Agriculture", description: "35+ schemes available", color: { text: "text-lime-500", bg: "lime-500" } },
-        { icon: Book, title: "Skill Development", description: "20+ schemes available", color: { text: "text-indigo-500", bg: "indigo-500" } },
-        { icon: Truck, title: "Transportation", description: "15+ schemes available", color: { text: "text-orange-500", bg: "orange-500" } },
-        { icon: Sun, title: "Energy", description: "10+ schemes available", color: { text: "text-yellow-400", bg: "yellow-400" } },
-        { icon: Wifi, title: "Digital India", description: "25+ schemes available", color: { text: "text-blue-400", bg: "blue-400" } },
-        { icon: Zap, title: "Rural Development", description: "30+ schemes available", color: { text: "text-green-600", bg: "green-600" } }
+        { 
+            icon: GraduationCap, 
+            title: getTranslation(currentLanguage, 'homePage.education'), 
+            description: `50+ ${getTranslation(currentLanguage, 'homePage.schemesAvailable')}`, 
+            color: { text: "text-blue-500", bg: "blue-500" } 
+        },
+        { 
+            icon: Heart, 
+            title: getTranslation(currentLanguage, 'homePage.healthcare'), 
+            description: `40+ ${getTranslation(currentLanguage, 'homePage.schemesAvailable')}`, 
+            color: { text: "text-red-500", bg: "red-500" } 
+        },
+        { 
+            icon: Users, 
+            title: getTranslation(currentLanguage, 'homePage.womenEmpowerment'), 
+            description: `30+ ${getTranslation(currentLanguage, 'homePage.schemesAvailable')}`, 
+            color: { text: "text-purple-500", bg: "purple-500" } 
+        },
+        { 
+            icon: Briefcase, 
+            title: getTranslation(currentLanguage, 'homePage.employment'), 
+            description: `45+ ${getTranslation(currentLanguage, 'homePage.schemesAvailable')}`, 
+            color: { text: "text-yellow-500", bg: "yellow-500" } 
+        },
+        { 
+            icon: Home, 
+            title: getTranslation(currentLanguage, 'homePage.housing'), 
+            description: `25+ ${getTranslation(currentLanguage, 'homePage.schemesAvailable')}`, 
+            color: { text: "text-green-500", bg: "green-500" } 
+        },
+        { 
+            icon: Sprout, 
+            title: getTranslation(currentLanguage, 'homePage.agriculture'), 
+            description: `35+ ${getTranslation(currentLanguage, 'homePage.schemesAvailable')}`, 
+            color: { text: "text-lime-500", bg: "lime-500" } 
+        },
+        { 
+            icon: Book, 
+            title: getTranslation(currentLanguage, 'homePage.skillDevelopment'), 
+            description: `20+ ${getTranslation(currentLanguage, 'homePage.schemesAvailable')}`, 
+            color: { text: "text-indigo-500", bg: "indigo-500" } 
+        },
+        { 
+            icon: Truck, 
+            title: getTranslation(currentLanguage, 'homePage.transportation'), 
+            description: `15+ ${getTranslation(currentLanguage, 'homePage.schemesAvailable')}`, 
+            color: { text: "text-orange-500", bg: "orange-500" } 
+        },
+        { 
+            icon: Sun, 
+            title: getTranslation(currentLanguage, 'homePage.energy'), 
+            description: `10+ ${getTranslation(currentLanguage, 'homePage.schemesAvailable')}`, 
+            color: { text: "text-yellow-400", bg: "yellow-400" } 
+        },
+        { 
+            icon: Wifi, 
+            title: getTranslation(currentLanguage, 'homePage.digitalIndia'), 
+            description: `25+ ${getTranslation(currentLanguage, 'homePage.schemesAvailable')}`, 
+            color: { text: "text-blue-400", bg: "blue-400" } 
+        },
+        { 
+            icon: Zap, 
+            title: getTranslation(currentLanguage, 'homePage.ruralDevelopment'), 
+            description: `30+ ${getTranslation(currentLanguage, 'homePage.schemesAvailable')}`, 
+            color: { text: "text-green-600", bg: "green-600" } 
+        }
     ];
 
     return (
         <section className="py-12">
             <div className="container mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-8">Browse by Category</h2>
+                <h2 className="text-3xl font-bold text-center mb-8">{getTranslation(currentLanguage, 'homePage.browseByCategoryTitle')}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {categories.map((category, index) => (
                         <div key={index} onClick={() => navigate(`/schemes?cat=${category.title}`)}>

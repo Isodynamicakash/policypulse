@@ -4,9 +4,12 @@ import banner2 from "../../../../assets/banner2.webp";
 import banner3 from "../../../../assets/banner3.jpg";
 import banner4 from "../../../../assets/banner4.jpg";
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../../../../context/LanguageContext';
+import { getTranslation } from '../../../../utils/translations';
 
 const HeroSection = () => {
     const navigate = useNavigate();
+    const { currentLanguage } = useLanguage();
     const images = [
         {
             src: banner2,
@@ -64,16 +67,16 @@ const HeroSection = () => {
             </div>
             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                 <div className="text-center text-white px-4 sm:px-0">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">Explore Government Schemes for You</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4">{getTranslation(currentLanguage, 'homePage.exploreTitle')}</h1>
                     <p className="text-xl mb-8">
-                        Get information about all the government schemes, categorized and easy to explore
+                        {getTranslation(currentLanguage, 'homePage.exploreSubtitle')}
                     </p>
                     <button
                         onClick={handleExplore}
                         className="bg-[#74B83E] text-white px-6 py-3 rounded-full text-lg font-semibold flex items-center hover:bg-[#5d9b2b] transition duration-300"
                         aria-label="Explore Government Schemes"
                     >
-                        Explore Schemes
+                        {getTranslation(currentLanguage, 'homePage.exploreButton')}
                         <ChevronRight className="ml-2" aria-hidden="true" />
                     </button>
                 </div>

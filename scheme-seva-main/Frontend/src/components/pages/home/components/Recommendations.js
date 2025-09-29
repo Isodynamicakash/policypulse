@@ -2,6 +2,8 @@ import { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { UserContext } from '../../../../context/UserContext';
+import { useLanguage } from '../../../../context/LanguageContext';
+import { getTranslation } from '../../../../utils/translations';
 import SchemeCard from '../../../common/schemeCard/SchemeCard';
 import { getPersonalizedRecommendations } from '../../../../services/recommendations/recommendationService';
 
@@ -10,6 +12,7 @@ const Recommendations = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const { isUserLoggedIn } = useContext(UserContext);
+    const { currentLanguage } = useLanguage();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -36,15 +39,15 @@ const Recommendations = () => {
         return (
             <section className="bg-gray-100 py-12">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-4xl font-bold mb-8 text-center">Personalized Recommendations</h2>
+                    <h2 className="text-4xl font-bold mb-8 text-center">{getTranslation(currentLanguage, 'homePage.recommendationsTitle')}</h2>
                     <div className="bg-white rounded-xl shadow-sm p-8 text-center">
-                        <h3 className="text-2xl font-bold mb-4">Get Personalized Scheme Recommendations</h3>
-                        <p className="text-xl mb-6">Create an account to receive scheme recommendations based on your profile</p>
+                        <h3 className="text-2xl font-bold mb-4">{getTranslation(currentLanguage, 'homePage.recommendationsSubtitle')}</h3>
+                        <p className="text-xl mb-6">{getTranslation(currentLanguage, 'homePage.recommendationsDesc')}</p>
                         <button
                             onClick={() => navigate('/signup')}
                             className="px-8 py-4 bg-[#74B83E] text-white font-bold text-xl rounded-lg hover:bg-[#629a33] transition-colors duration-200"
                         >
-                            Sign Up Now →
+                            {getTranslation(currentLanguage, 'homePage.signUpNowButton')}
                         </button>
                     </div>
                 </div>
@@ -56,7 +59,7 @@ const Recommendations = () => {
         return (
             <div className="text-center py-8">
                 <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#74B83E]"></div>
-                <p className="mt-2 text-xl">Loading recommendations...</p>
+                <p className="mt-2 text-xl">{getTranslation(currentLanguage, 'loading')}...</p>
             </div>
         );
     }
