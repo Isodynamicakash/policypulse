@@ -1,6 +1,6 @@
 # PolicyPulse - Government Scheme Management Portal Setup Guide
 
-This guide will help you set up and run the PolicyPulse (Scheme Seva) application locally with Backend on port 5000 and Frontend on port 3000.
+This guide will help you set up and run the PolicyPulse application locally with Backend on port 5000 and Frontend on port 3000.
 
 ## Prerequisites
 

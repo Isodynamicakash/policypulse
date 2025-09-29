@@ -147,8 +147,8 @@ export const translations = {
         
         // Footer
         footer: {
-            phone: "Phone: +91 1234567890",
-            email: "Email: 9582anupamk@gmail.com",
+            phone: "Phone: Contact through website",
+            email: "Email: Contact through website",
             quickLinks: "Quick Links",
             categories: "Categories",
             connect: "Connect",
@@ -160,8 +160,8 @@ export const translations = {
             explore: "Explore",
             newSchemes: "New Schemes",
             health: "Health",
-            copyright: "© 2025 SchemeSeva. All rights reserved.",
-            developedBy: "Developed by @9582anupam"
+            copyright: "© 2025 PolicyPulse. All rights reserved.",
+            developedBy: "Developed by Team UXplorers"
         },
         
         // Language selector
@@ -317,8 +317,8 @@ export const translations = {
         
         // Footer
         footer: {
-            phone: "फोन: +91 1234567890",
-            email: "ईमेल: 9582anupamk@gmail.com",
+            phone: "फोन: वेबसाइट के माध्यम से संपर्क करें",
+            email: "ईमेल: वेबसाइट के माध्यम से संपर्क करें",
             quickLinks: "त्वरित लिंक",
             categories: "श्रेणियां",
             connect: "जुड़ें",
@@ -330,8 +330,8 @@ export const translations = {
             explore: "अन्वेषण",
             newSchemes: "नई योजनाएं",
             health: "स्वास्थ्य",
-            copyright: "© 2025 SchemeSeva। सभी अधिकार सुरक्षित।",
-            developedBy: "@9582anupam द्वारा विकसित"
+            copyright: "© 2025 PolicyPulse। सभी अधिकार सुरक्षित।",
+            developedBy: "Team UXplorers द्वारा विकसित"
         },
         
         // Language selector
