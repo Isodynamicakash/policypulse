@@ -4,22 +4,26 @@ import instagram from "../../../utils/images/footer/instagram.png";
 import facebook from "../../../utils/images/footer/facebook.png";
 import youtube from "../../../utils/images/footer/youtube.png";
 import x from "../../../utils/images/footer/twitter.png";
+import { useLanguage } from "../../../context/LanguageContext";
+import { getTranslation } from "../../../utils/translations";
 import "./footer.css";
 
 const Footer = () => {
+    const { currentLanguage } = useLanguage();
+    
     const quickLinks = [
-        "about",
-        "contact",
-        "privacy policy",
-        "terms & conditions",
-        "account",
+        getTranslation(currentLanguage, 'footer.about'),
+        getTranslation(currentLanguage, 'footer.contact'),
+        getTranslation(currentLanguage, 'footer.privacyPolicy'),
+        getTranslation(currentLanguage, 'footer.termsConditions'),
+        getTranslation(currentLanguage, 'footer.account'),
     ];
     const categories = [
-        "Explore",
-        "New Schemes",
-        "Education",
-        "Health",
-        "Agriculture",
+        getTranslation(currentLanguage, 'footer.explore'),
+        getTranslation(currentLanguage, 'footer.newSchemes'),
+        getTranslation(currentLanguage, 'homePage.education'),
+        getTranslation(currentLanguage, 'footer.health'),
+        getTranslation(currentLanguage, 'homePage.agriculture'),
     ];
     const socialMedia = [facebook, x, instagram, youtube];
 
@@ -31,7 +35,7 @@ const Footer = () => {
                         {/* Contact information removed as requested */}
                     </div>
                     <div>
-                        <h3 className="font-bold text-3xl mb-3">Quick Links</h3>
+                        <h3 className="font-bold text-3xl mb-3">{getTranslation(currentLanguage, 'footer.quickLinks')}</h3>
                         <div className="flex flex-col gap-1">
                             {quickLinks.map((link, index) => (
                                 <p
@@ -43,7 +47,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div>
-                        <h3 className="font-bold text-3xl mb-3">Categories</h3>
+                        <h3 className="font-bold text-3xl mb-3">{getTranslation(currentLanguage, 'footer.categories')}</h3>
                         <div className="flex flex-col gap-1">
                             {categories.map((category, index) => (
                                 <p
@@ -55,7 +59,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div>
-                        <h3 className="font-bold text-3xl mb-3">Connect</h3>
+                        <h3 className="font-bold text-3xl mb-3">{getTranslation(currentLanguage, 'footer.connect')}</h3>
                         <div className="flex gap-2 cursor-pointer">
                             {socialMedia.map((icon, index) => (
                                 <div key={index}>
@@ -72,11 +76,11 @@ const Footer = () => {
             </div>
             <div className="bg-[#000] w-full flex justify-center items-center flex-col">
                 <p className="text-white mt-2 font-poppins font-medium text-xl">
-                    &copy; 2025 PolicyPulse. All rights reserved.
+                    {getTranslation(currentLanguage, 'footer.copyright')}
                 </p>
                 <p className="font-mono font-bold text-xl py-1 mb-2">
                     <span className="shiny-text text-[#FF0000]">
-                        Developed by Team UXplorers
+                        {getTranslation(currentLanguage, 'footer.developedBy')}
                     </span>
                 </p>
             </div>

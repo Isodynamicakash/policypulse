@@ -13,6 +13,8 @@ import {
 import { styled } from "@mui/system";
 import { Link, useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { useLanguage } from "../../../context/LanguageContext";
+import { getTranslation } from "../../../utils/translations";
 import "./auth.css";
 import axios from "axios";
 
@@ -61,6 +63,7 @@ const Signup = () => {
     const [passwordError, setPasswordError] = useState(""); // Password-specific error
     const [isSubmitted, setIsSubmitted] = useState(false); // Track submission
     const navigate = useNavigate();
+    const { currentLanguage } = useLanguage();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -131,7 +134,7 @@ const Signup = () => {
                                 variant="h5"
                                 gutterBottom
                                 sx={{ fontWeight: "bold" }}>
-                                Sign Up
+                                {getTranslation(currentLanguage, 'auth.signUpTitle')}
                             </Typography>
                         </div>
                         <StyledForm noValidate onSubmit={handleSubmit}>
@@ -141,7 +144,7 @@ const Signup = () => {
                                 required
                                 fullWidth
                                 id="name"
-                                label="Name"
+                                label={getTranslation(currentLanguage, 'profile.name')}
                                 name="name"
                                 autoComplete="name"
                                 autoFocus
@@ -156,7 +159,7 @@ const Signup = () => {
                                 required
                                 fullWidth
                                 id="email"
-                                label="Email Address"
+                                label={getTranslation(currentLanguage, 'auth.emailAddress')}
                                 name="email"
                                 autoComplete="email"
                                 value={email}
@@ -170,7 +173,7 @@ const Signup = () => {
                                 required
                                 fullWidth
                                 name="password"
-                                label="Password"
+                                label={getTranslation(currentLanguage, 'auth.password')}
                                 type="password"
                                 id="password"
                                 autoComplete="new-password"
@@ -184,7 +187,7 @@ const Signup = () => {
                                 required
                                 fullWidth
                                 name="confirmPassword"
-                                label="Confirm Password"
+                                label={getTranslation(currentLanguage, 'auth.confirmPassword')}
                                 type="password"
                                 id="confirmPassword"
                                 autoComplete="new-password"
@@ -209,7 +212,7 @@ const Signup = () => {
                                 variant="contained"
                                 color="primary"
                                 sx={{ color: "white" }}>
-                                Sign Up
+                                {getTranslation(currentLanguage, 'auth.signUp')}
                             </SubmitButton>
                             <Button
                                 fullWidth
@@ -217,15 +220,15 @@ const Signup = () => {
                                 color="primary"
                                 onClick={handleGoogleSignUp}
                                 sx={{ marginTop: 2 }}>
-                                Sign Up with Google
+                                {getTranslation(currentLanguage, 'auth.signUpWithGoogle')}
                             </Button>
                             <Box mt={2}>
                                 <Typography variant="body2">
-                                    Already have an account?{" "}
+                                    {getTranslation(currentLanguage, 'auth.alreadyHaveAccount')}{" "}
                                     <Link
                                         to="/login"
                                         className="text-[#00aaff] text-lg">
-                                        Sign In
+                                        {getTranslation(currentLanguage, 'auth.signIn')}
                                     </Link>
                                 </Typography>
                             </Box>
