@@ -15,14 +15,21 @@ A comprehensive platform that helps citizens discover, understand, and access go
 
 ### 2. AI-Powered Chatbot
 - Interactive chatbot for scheme-related queries
-- Multilingual support (English, Hindi, Punjabi)
+- Multilingual support for 17 Indian languages
 - Context-aware responses about:
   - Eligibility criteria
   - Application process
   - Required documents
   - Scheme benefits
 
-### 3. User Management
+### 3. Multilingual Support
+- Built-in language support for 17 Indian languages
+- Languages included: English, Hindi, Bengali, Telugu, Marathi, Tamil, Urdu, Gujarati, Kannada, Malayalam, Odia, Punjabi, Assamese, Sanskrit, Nepali, Sindhi, Kashmiri
+- Client-side language switching with persistent preferences
+- No external API dependencies for translations
+- Language selector available in both desktop and mobile versions
+
+### 4. User Management
 - User registration and authentication
 - Personalized profile management
 - Save favorite schemes
