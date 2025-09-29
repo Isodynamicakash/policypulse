@@ -1,4 +1,6 @@
 import { UserPlus, Search, CheckSquare } from "lucide-react";
+import { useLanguage } from "../../../../context/LanguageContext";
+import { getTranslation } from "../../../../utils/translations";
 
 const StepCard = ({ icon: Icon, title, description }) => (
     <div className="flex flex-col items-center text-center">
@@ -9,21 +11,27 @@ const StepCard = ({ icon: Icon, title, description }) => (
 );
 
 const HowToApply = () => {
+    const { currentLanguage } = useLanguage();
+    
     return (
         <section className=" px-8 py-12 bg-gray-100">
             <div className="container mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-8">How to Apply</h2>
+                <h2 className="text-3xl font-bold text-center mb-8">{getTranslation(currentLanguage, 'homePage.howToApplyTitle')}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <StepCard
                         icon={UserPlus}
-                        title="Enter Details"
-                        description="Start by entering your details to find relevant schemes"
+                        title={getTranslation(currentLanguage, 'homePage.enterDetails')}
+                        description={getTranslation(currentLanguage, 'homePage.enterDetailsDesc')}
                     />
-                    <StepCard icon={Search} title="Search" description="Our search engine helps you find the relevant schemes" />
+                    <StepCard 
+                        icon={Search} 
+                        title={getTranslation(currentLanguage, 'homePage.search')} 
+                        description={getTranslation(currentLanguage, 'homePage.searchDesc')} 
+                    />
                     <StepCard
                         icon={CheckSquare}
-                        title="Select and Apply"
-                        description="Choose the schemes you're eligible for and apply online"
+                        title={getTranslation(currentLanguage, 'homePage.selectAndApply')}
+                        description={getTranslation(currentLanguage, 'homePage.selectAndApplyDesc')}
                     />
                 </div>
             </div>
