@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import {
     User,
@@ -17,6 +15,8 @@ import {
 } from "lucide-react";
 import { getUserProfile, updateUserProfile } from "../../../services/users/user";
 import { toast } from "react-hot-toast";
+import { useLanguage } from "../../../context/LanguageContext";
+import { getTranslation } from "../../../utils/translations";
 
 // Constants matching the user model
 const INCOME_GROUPS = ["EWS", "General", "OBC", "SC", "ST"];
@@ -52,6 +52,7 @@ const INTERESTS = [
 
 const Profile = () => {
     const [isEditing, setIsEditing] = useState(false);
+    const { currentLanguage } = useLanguage();
     const [userData, setUserData] = useState({
         name: "",
         email: "",
@@ -122,53 +123,53 @@ const Profile = () => {
         <div className="max-w-4xl mx-auto p-6 min-h-[calc(100svh-4rem)]">
             <div className="bg-white rounded-2xl shadow-lg p-8">
                 <div className="flex justify-between items-center mb-8">
-                    <h1 className="text-2xl font-bold text-gray-800">User Profile</h1>
+                    <h1 className="text-2xl font-bold text-gray-800">{getTranslation(currentLanguage, 'profile.title')}</h1>
                     {!isEditing ? (
                         <button
                             onClick={() => setIsEditing(true)}
                             className="flex items-center text-[#74B83E] hover:text-[#629a33] transition-colors"
                         >
                             <Edit2 className="w-4 h-4 mr-2" />
-                            Edit Profile
+                            {getTranslation(currentLanguage, 'profile.editProfile')}
                         </button>
                     ) : null}
                 </div>
 
                 {!isEditing ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <ProfileItem icon={<User />} label="Name" value={userData.name} />
-                        <ProfileItem icon={<Mail />} label="Email" value={userData.email} />
+                        <ProfileItem icon={<User />} label={getTranslation(currentLanguage, 'profile.name')} value={userData.name} />
+                        <ProfileItem icon={<Mail />} label={getTranslation(currentLanguage, 'profile.email')} value={userData.email} />
                         <ProfileItem
                             icon={<Phone />}
-                            label="Phone"
+                            label={getTranslation(currentLanguage, 'profile.phone')}
                             value={userData.phoneNumber}
                         />
-                        <ProfileItem icon={<Calendar />} label="Age" value={userData.age} />
+                        <ProfileItem icon={<Calendar />} label={getTranslation(currentLanguage, 'profile.age')} value={userData.age} />
                         <ProfileItem
                             icon={<User />}
-                            label="Gender"
+                            label={getTranslation(currentLanguage, 'profile.gender')}
                             value={
                                 userData.gender &&
                                 userData.gender?.charAt(0).toUpperCase() +
                                 userData.gender?.slice(1)
                             }
                         />
-                        <ProfileItem icon={<MapPin />} label="State" value={userData.state} />
+                        <ProfileItem icon={<MapPin />} label={getTranslation(currentLanguage, 'profile.state')} value={userData.state} />
                         <ProfileItem
                             icon={<Heart />}
-                            label="Interests"
+                            label={getTranslation(currentLanguage, 'profile.interests')}
                             value={userData.interests.join(", ")}
                         />
                         <ProfileItem
                             icon={<DollarSign />}
-                            label="Income Group"
+                            label={getTranslation(currentLanguage, 'profile.incomeGroup')}
                             value={userData.incomeGroup}
                         />
-                        <ProfileItem icon={<Shield />} label="Role" value={userData.role} />
+                        <ProfileItem icon={<Shield />} label={getTranslation(currentLanguage, 'profile.role')} value={userData.role} />
                         <ProfileItem
                             icon={<Star />}
-                            label="Favorites"
-                            value={`${userData.favorites.length} schemes`}
+                            label={getTranslation(currentLanguage, 'profile.favorites')}
+                            value={`${userData.favorites.length} ${getTranslation(currentLanguage, 'profile.schemes')}`}
                         />
                     </div>
                 ) : (
@@ -176,7 +177,7 @@ const Profile = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <InputField
                                 icon={<User />}
-                                label="Name"
+                                label={getTranslation(currentLanguage, 'profile.name')}
                                 name="name"
                                 value={userData.name}
                                 onChange={handleChange}
@@ -184,7 +185,7 @@ const Profile = () => {
                             />
                             <InputField
                                 icon={<Phone />}
-                                label="Phone Number"
+                                label={getTranslation(currentLanguage, 'profile.phone')}
                                 name="phoneNumber"
                                 value={userData.phoneNumber}
                                 onChange={handleChange}
@@ -193,7 +194,7 @@ const Profile = () => {
                             />
                             <InputField
                                 icon={<Calendar />}
-                                label="Age"
+                                label={getTranslation(currentLanguage, 'profile.age')}
                                 name="age"
                                 type="number"
                                 min="18"
@@ -203,19 +204,19 @@ const Profile = () => {
                             />
                             <SelectField
                                 icon={<User />}
-                                label="Gender"
+                                label={getTranslation(currentLanguage, 'profile.gender')}
                                 name="gender"
                                 value={userData.gender}
                                 onChange={handleChange}
                                 options={[
-                                    { value: "male", label: "Male" },
-                                    { value: "female", label: "Female" },
-                                    { value: "other", label: "Other" },
+                                    { value: "male", label: getTranslation(currentLanguage, 'profile.male') },
+                                    { value: "female", label: getTranslation(currentLanguage, 'profile.female') },
+                                    { value: "other", label: getTranslation(currentLanguage, 'profile.other') },
                                 ]}
                             />
                             <SelectField
                                 icon={<MapPin />}
-                                label="State"
+                                label={getTranslation(currentLanguage, 'profile.state')}
                                 name="state"
                                 value={userData.state}
                                 onChange={handleChange}
@@ -226,7 +227,7 @@ const Profile = () => {
                             />
                             <SelectField
                                 icon={<DollarSign />}
-                                label="Income Group"
+                                label={getTranslation(currentLanguage, 'profile.incomeGroup')}
                                 name="incomeGroup"
                                 value={userData.incomeGroup}
                                 onChange={handleChange}
@@ -239,7 +240,7 @@ const Profile = () => {
 
                         <div className="space-y-2">
                             <label className="block text-sm font-medium text-gray-700">
-                                Interests
+                                {getTranslation(currentLanguage, 'profile.interests')}
                             </label>
                             <div className="flex flex-wrap gap-2">
                                 {INTERESTS.map((interest) => (
@@ -265,14 +266,14 @@ const Profile = () => {
                                 className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors flex items-center"
                             >
                                 <X className="w-4 h-4 mr-2" />
-                                Cancel
+                                {getTranslation(currentLanguage, 'cancel')}
                             </button>
                             <button
                                 type="submit"
                                 className="px-4 py-2 text-white bg-[#74B83E] rounded-lg hover:bg-[#629a33] transition-colors flex items-center"
                             >
                                 <Save className="w-4 h-4 mr-2" />
-                                Save Changes
+                                {getTranslation(currentLanguage, 'profile.saveChanges')}
                             </button>
                         </div>
                     </form>

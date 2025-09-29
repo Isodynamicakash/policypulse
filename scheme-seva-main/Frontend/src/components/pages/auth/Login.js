@@ -16,6 +16,8 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import "./auth.css";
 import axios from "axios";
 import { UserContext } from "../../../context/UserContext";
+import { useLanguage } from "../../../context/LanguageContext";
+import { getTranslation } from "../../../utils/translations";
 
 // Define the custom theme
 const theme = createTheme({
@@ -64,6 +66,7 @@ const Login = () => {
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const { setIsUserLoggedIn } = useContext(UserContext);
+    const { currentLanguage } = useLanguage();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -125,7 +128,7 @@ const Login = () => {
                                 variant="h4"
                                 gutterBottom
                                 sx={{ fontWeight: "bold", margin: "0 auto" }}>
-                                Login
+                                {getTranslation(currentLanguage, 'auth.loginTitle')}
                             </Typography>
                         </div>
 
@@ -136,7 +139,7 @@ const Login = () => {
                                 required
                                 fullWidth
                                 id="email"
-                                label="Email Address"
+                                label={getTranslation(currentLanguage, 'auth.emailAddress')}
                                 name="email"
                                 autoComplete="email"
                                 autoFocus
@@ -151,7 +154,7 @@ const Login = () => {
                                 required
                                 fullWidth
                                 name="password"
-                                label="Password"
+                                label={getTranslation(currentLanguage, 'auth.password')}
                                 type="password"
                                 id="password"
                                 autoComplete="current-password"
@@ -174,22 +177,22 @@ const Login = () => {
                                 variant="contained"
                                 color="primary"
                                 sx={{ color: "white" }}>
-                                Login
+                                {getTranslation(currentLanguage, 'login')}
                             </SubmitButton>
                             <GoogleButton
                                 fullWidth
                                 variant="outlined"
                             // onClick={handleGoogleSignIn}
                             >
-                                Login with Google
+                                {getTranslation(currentLanguage, 'auth.loginWithGoogle')}
                             </GoogleButton>
                             <Box mt={2}>
                                 <Typography variant="body2">
-                                    Don't have an account?{" "}
+                                    {getTranslation(currentLanguage, 'auth.dontHaveAccount')}{" "}
                                     <Link
                                         to="/signup"
                                         className="text-[#00aaff] text-lg">
-                                        Sign Up
+                                        {getTranslation(currentLanguage, 'auth.signUp')}
                                     </Link>
                                 </Typography>
                             </Box>

@@ -6,11 +6,14 @@ import { useNavigate } from "react-router-dom";
 import userAuthenticatedAxiosInstance from "../../../services/users/userAuthenticatedAxiosInstance";
 import lionlogo from "../../../assets/lionsymbol.png";
 import LanguageSelector from "../LanguageSelector";
+import { useLanguage } from "../../../context/LanguageContext";
+import { getTranslation } from "../../../utils/translations";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const { isUserLoggedIn, setIsUserLoggedIn } = useContext(UserContext);
+    const { currentLanguage } = useLanguage();
     const navigate = useNavigate();
     const profileRef = useRef(null);
     
@@ -52,19 +55,19 @@ const Header = () => {
             <nav className="hidden md:flex justify-between items-center gap-10">
                 <Link to="/" className="flex flex-col justify-center items-center text-white">
                     <Home className="w-7 h-7" />
-                    <p className="font-semibold">Home</p>
+                    <p className="font-semibold">{getTranslation(currentLanguage, 'home')}</p>
                 </Link>
                 <Link to="/about" className="flex flex-col justify-center items-center text-white">
                     <Info className="w-7 h-7" />
-                    <p className="font-semibold">About</p>
+                    <p className="font-semibold">{getTranslation(currentLanguage, 'about')}</p>
                 </Link>
                 <Link to="/schemes" className="flex flex-col justify-center items-center text-white">
                     <FileText className="w-7 h-7" />
-                    <p className="font-semibold">Schemes</p>
+                    <p className="font-semibold">{getTranslation(currentLanguage, 'schemes')}</p>
                 </Link>
                 <Link to="/recommendations" className="flex flex-col justify-center items-center text-white">
                     <ShieldCheck    className="w-7 h-7" />
-                    <p className="font-semibold">Suggests</p>
+                    <p className="font-semibold">{getTranslation(currentLanguage, 'suggests')}</p>
                 </Link>
             </nav>
             <div className="flex gap-4 items-center">
@@ -92,13 +95,13 @@ const Header = () => {
                                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                     onClick={() => setIsProfileOpen(false)}
                                 >
-                                    Profile
+                                    {getTranslation(currentLanguage, 'userProfile')}
                                 </Link>
                                 <button
                                     onClick={handleLogout}
                                     className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
                                 >
-                                    Logout
+                                    {getTranslation(currentLanguage, 'logout')}
                                 </button>
                             </div>
                         )}
@@ -109,7 +112,7 @@ const Header = () => {
                         className="bg-white text-black rounded-md px-4 py-2 flex justify-center items-center cursor-pointer"
                     >
                         <LogIn size={18} className="mr-2" />
-                        <p>Login</p>
+                        <p>{getTranslation(currentLanguage, 'login')}</p>
                     </Link>
                 )}
                 <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)} name="Menu Button">
@@ -118,10 +121,10 @@ const Header = () => {
             </div>
             {isOpen && (
                 <div onClick={() => { setIsOpen(!isOpen); }} className="absolute top-20 left-0 right-0 bg-[#74B83E] md:hidden min-h-screen z-50 px-6">
-                    <NavLink to="/" icon={<Home size={18} />}>Home</NavLink>
-                    <NavLink to="/about" icon={<Info size={18} />}>About</NavLink>
-                    <NavLink to="/schemes" icon={<FileText size={18} />}>Schemes</NavLink>
-                    <NavLink to="/recommendations" icon={<ShieldCheck size={18} />}>Suggests</NavLink>
+                    <NavLink to="/" icon={<Home size={18} />}>{getTranslation(currentLanguage, 'home')}</NavLink>
+                    <NavLink to="/about" icon={<Info size={18} />}>{getTranslation(currentLanguage, 'about')}</NavLink>
+                    <NavLink to="/schemes" icon={<FileText size={18} />}>{getTranslation(currentLanguage, 'schemes')}</NavLink>
+                    <NavLink to="/recommendations" icon={<ShieldCheck size={18} />}>{getTranslation(currentLanguage, 'suggests')}</NavLink>
                     {/* Language Selector for mobile */}
                     <div className="py-4 border-t border-green-600 mt-4">
                         <LanguageSelector 
