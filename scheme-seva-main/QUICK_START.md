@@ -86,7 +86,7 @@ npm start       # Starts on port 3000
 
 ### Test Users
 - **Regular User**: `ramesh.kumar@example.com` / `password123`
-- **Admin User**: `admin@schemeseva.gov.in` / `admin123`
+- **Admin User**: `admin@policypulse.gov.in` / `admin123`
 
 ## 🌐 API Endpoints Ready to Use
 

@@ -1,5 +1,5 @@
 {
-  "name": "scheme-seva",
+  "name": "policy-pulse",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Anupam",
+  "author": "Team UXplorers",
   "license": "MIT",
   "dependencies": {
     "@google/generative-ai": "^0.2.1",
