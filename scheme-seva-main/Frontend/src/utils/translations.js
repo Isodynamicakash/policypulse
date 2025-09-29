@@ -29,6 +29,23 @@ export const translations = {
         dashboard: "Dashboard",
         settings: "Settings",
         help: "Help",
+        suggests: "Suggests",
+        
+        // Auth
+        auth: {
+            signUp: "Sign Up",
+            signIn: "Sign In",
+            loginTitle: "Login",
+            signUpTitle: "Sign Up",
+            emailAddress: "Email Address",
+            password: "Password",
+            confirmPassword: "Confirm Password",
+            loginWithGoogle: "Login with Google",
+            signUpWithGoogle: "Sign Up with Google",
+            dontHaveAccount: "Don't have an account?",
+            alreadyHaveAccount: "Already have an account?",
+            required: "*"
+        },
         
         // Chatbot
         chatbot: {
@@ -56,13 +73,95 @@ export const translations = {
         // Profile
         profile: {
             personalInfo: "Personal Information",
+            title: "User Profile",
+            editProfile: "Edit Profile",
+            saveChanges: "Save Changes",
             name: "Name",
             email: "Email",
             phone: "Phone Number",
             age: "Age",
             gender: "Gender",
             state: "State",
-            city: "City"
+            city: "City",
+            interests: "Interests",
+            incomeGroup: "Income Group",
+            role: "Role",
+            favorites: "Favorites",
+            schemes: "schemes",
+            male: "Male",
+            female: "Female",
+            other: "Other"
+        },
+        
+        // Home Page
+        homePage: {
+            exploreTitle: "Explore Government Schemes for You",
+            exploreSubtitle: "Get information about all the government schemes, categorized and easy to explore",
+            exploreButton: "Explore Schemes",
+            totalSchemesTitle: "Total Available Schemes",
+            totalSchemes: "Total Schemes Available",
+            centralSchemes: "Total Central Schemes",
+            stateSchemes: "Total Schemes for States",
+            findSchemesButton: "Find Schemes for You",
+            browseByCategoryTitle: "Browse by Category",
+            education: "Education",
+            healthcare: "Healthcare",
+            womenEmpowerment: "Women Empowerment",
+            employment: "Employment",
+            housing: "Housing",
+            agriculture: "Agriculture",
+            skillDevelopment: "Skill Development",
+            transportation: "Transportation",
+            energy: "Energy",
+            digitalIndia: "Digital India",
+            ruralDevelopment: "Rural Development",
+            schemesAvailable: "schemes available",
+            howToApplyTitle: "How to Apply",
+            enterDetails: "Enter Details",
+            enterDetailsDesc: "Start by entering your details to find relevant schemes",
+            search: "Search",
+            searchDesc: "Our search engine helps you find the relevant schemes",
+            selectAndApply: "Select and Apply",
+            selectAndApplyDesc: "Choose the schemes you're eligible for and apply online",
+            aboutUsTitle: "About Us",
+            aboutUsDesc: "We are dedicated to bridging the gap between citizens and government schemes. Our mission is to provide easy access to all government schemes, ensuring that every citizen can take advantage of the benefits they are entitled to.",
+            ourMission: "Our Mission",
+            ourMissionDesc: "To empower citizens by providing comprehensive information about government schemes.",
+            whoWeServe: "Who We Serve",
+            whoWeServeDesc: "All citizens looking to benefit from government initiatives and programs.",
+            ourCommitment: "Our Commitment",
+            ourCommitmentDesc: "Providing accurate, up-to-date information and guidance on all available schemes.",
+            learnMoreButton: "Learn More About Us",
+            faqTitle: "Frequently Asked Questions",
+            faq1: "How can I apply for a scheme?",
+            faq2: "What documents are required for application?",
+            faq3: "Who is eligible for the central schemes?",
+            faq4: "How long does the application process take?",
+            faq5: "Can I apply for multiple schemes simultaneously?",
+            faq6: "What should I do if my application is rejected?",
+            recommendationsTitle: "Personalized Recommendations",
+            recommendationsSubtitle: "Get Personalized Scheme Recommendations",
+            recommendationsDesc: "Create an account to receive scheme recommendations based on your profile",
+            signUpNowButton: "Sign Up Now →"
+        },
+        
+        // Footer
+        footer: {
+            phone: "Phone: +91 1234567890",
+            email: "Email: 9582anupamk@gmail.com",
+            quickLinks: "Quick Links",
+            categories: "Categories",
+            connect: "Connect",
+            about: "about",
+            contact: "contact",
+            privacyPolicy: "privacy policy",
+            termsConditions: "terms & conditions",
+            account: "account",
+            explore: "Explore",
+            newSchemes: "New Schemes",
+            health: "Health",
+            copyright: "© 2025 SchemeSeva. All rights reserved.",
+            developedBy: "Developed by @9582anupam"
         },
         
         // Language selector
@@ -100,6 +199,23 @@ export const translations = {
         dashboard: "डैशबोर्ड",
         settings: "सेटिंग्स",
         help: "सहायता",
+        suggests: "सुझाव",
+        
+        // Auth
+        auth: {
+            signUp: "साइन अप",
+            signIn: "साइन इन",
+            loginTitle: "लॉगिन",
+            signUpTitle: "साइन अप",
+            emailAddress: "ईमेल पता",
+            password: "पासवर्ड",
+            confirmPassword: "पासवर्ड की पुष्टि करें",
+            loginWithGoogle: "Google के साथ लॉगिन",
+            signUpWithGoogle: "Google के साथ साइन अप",
+            dontHaveAccount: "खाता नहीं है?",
+            alreadyHaveAccount: "पहले से खाता है?",
+            required: "*"
+        },
         
         // Chatbot
         chatbot: {
@@ -127,13 +243,95 @@ export const translations = {
         // Profile
         profile: {
             personalInfo: "व्यक्तिगत जानकारी",
+            title: "उपयोगकर्ता प्रोफ़ाइल",
+            editProfile: "प्रोफ़ाइल संपादित करें",
+            saveChanges: "परिवर्तन सहेजें",
             name: "नाम",
             email: "ईमेल",
             phone: "फोन नंबर",
             age: "उम्र",
             gender: "लिंग",
             state: "राज्य",
-            city: "शहर"
+            city: "शहर",
+            interests: "रुचियां",
+            incomeGroup: "आय समूह",
+            role: "भूमिका",
+            favorites: "पसंदीदा",
+            schemes: "योजनाएं",
+            male: "पुरुष",
+            female: "महिला",
+            other: "अन्य"
+        },
+        
+        // Home Page
+        homePage: {
+            exploreTitle: "अपने लिए सरकारी योजनाओं का अन्वेषण करें",
+            exploreSubtitle: "सभी सरकारी योजनाओं की जानकारी प्राप्त करें, वर्गीकृत और अन्वेषण के लिए आसान",
+            exploreButton: "योजनाओं का अन्वेषण करें",
+            totalSchemesTitle: "कुल उपलब्ध योजनाएं",
+            totalSchemes: "कुल उपलब्ध योजनाएं",
+            centralSchemes: "कुल केंद्रीय योजनाएं",
+            stateSchemes: "राज्यों के लिए कुल योजनाएं",
+            findSchemesButton: "अपने लिए योजनाएं खोजें",
+            browseByCategoryTitle: "श्रेणी के अनुसार ब्राउज़ करें",
+            education: "शिक्षा",
+            healthcare: "स्वास्थ्य सेवा",
+            womenEmpowerment: "महिला सशक्तिकरण",
+            employment: "रोजगार",
+            housing: "आवास",
+            agriculture: "कृषि",
+            skillDevelopment: "कौशल विकास",
+            transportation: "परिवहन",
+            energy: "ऊर्जा",
+            digitalIndia: "डिजिटल इंडिया",
+            ruralDevelopment: "ग्रामीण विकास",
+            schemesAvailable: "योजनाएं उपलब्ध",
+            howToApplyTitle: "आवेदन कैसे करें",
+            enterDetails: "विवरण दर्ज करें",
+            enterDetailsDesc: "प्रासंगिक योजनाओं को खोजने के लिए अपना विवरण दर्ज करके शुरुआत करें",
+            search: "खोजें",
+            searchDesc: "हमारा खोज इंजन आपको प्रासंगिक योजनाएं खोजने में मदद करता है",
+            selectAndApply: "चुनें और आवेदन करें",
+            selectAndApplyDesc: "उन योजनाओं का चयन करें जिसके लिए आप पात्र हैं और ऑनलाइन आवेदन करें",
+            aboutUsTitle: "हमारे बारे में",
+            aboutUsDesc: "हम नागरिकों और सरकारी योजनाओं के बीच की खाई को पाटने के लिए प्रतिबद्ध हैं। हमारा मिशन सभी सरकारी योजनाओं तक आसान पहुंच प्रदान करना है, यह सुनिश्चित करते हुए कि हर नागरिक उन लाभों का फायदा उठा सके जिसका वे हकदार हैं।",
+            ourMission: "हमारा मिशन",
+            ourMissionDesc: "सरकारी योजनाओं के बारे में व्यापक जानकारी प्रदान करके नागरिकों को सशक्त बनाना।",
+            whoWeServe: "हम किसकी सेवा करते हैं",
+            whoWeServeDesc: "सभी नागरिक जो सरकारी पहलों और कार्यक्रमों से लाभ उठाना चाहते हैं।",
+            ourCommitment: "हमारी प्रतिबद्धता",
+            ourCommitmentDesc: "सभी उपलब्ध योजनाओं पर सटीक, अद्यतन जानकारी और मार्गदर्शन प्रदान करना।",
+            learnMoreButton: "हमारे बारे में और जानें",
+            faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
+            faq1: "मैं योजना के लिए आवेदन कैसे कर सकता हूं?",
+            faq2: "आवेदन के लिए कौन से दस्तावेज आवश्यक हैं?",
+            faq3: "केंद्रीय योजनाओं के लिए कौन पात्र है?",
+            faq4: "आवेदन प्रक्रिया में कितना समय लगता है?",
+            faq5: "क्या मैं एक साथ कई योजनाओं के लिए आवेदन कर सकता हूं?",
+            faq6: "यदि मेरा आवेदन अस्वीकृत हो जाता है तो मुझे क्या करना चाहिए?",
+            recommendationsTitle: "व्यक्तिगत सिफारिशें",
+            recommendationsSubtitle: "व्यक्तिगत योजना सिफारिशें प्राप्त करें",
+            recommendationsDesc: "अपनी प्रोफ़ाइल के आधार पर योजना सिफारिशें प्राप्त करने के लिए एक खाता बनाएं",
+            signUpNowButton: "अभी साइन अप करें →"
+        },
+        
+        // Footer
+        footer: {
+            phone: "फोन: +91 1234567890",
+            email: "ईमेल: 9582anupamk@gmail.com",
+            quickLinks: "त्वरित लिंक",
+            categories: "श्रेणियां",
+            connect: "जुड़ें",
+            about: "के बारे में",
+            contact: "संपर्क",
+            privacyPolicy: "गोपनीयता नीति",
+            termsConditions: "नियम और शर्तें",
+            account: "खाता",
+            explore: "अन्वेषण",
+            newSchemes: "नई योजनाएं",
+            health: "स्वास्थ्य",
+            copyright: "© 2025 SchemeSeva। सभी अधिकार सुरक्षित।",
+            developedBy: "@9582anupam द्वारा विकसित"
         },
         
         // Language selector
@@ -171,6 +369,23 @@ export const translations = {
         dashboard: "ড্যাশবোর্ড",
         settings: "সেটিংস",
         help: "সাহায্য",
+        suggests: "সুপারিশ",
+        
+        // Auth
+        auth: {
+            signUp: "সাইন আপ",
+            signIn: "সাইন ইন",
+            loginTitle: "লগইন",
+            signUpTitle: "সাইন আপ",
+            emailAddress: "ইমেইল ঠিকানা",
+            password: "পাসওয়ার্ড",
+            confirmPassword: "পাসওয়ার্ড নিশ্চিত করুন",
+            loginWithGoogle: "Google দিয়ে লগইন",
+            signUpWithGoogle: "Google দিয়ে সাইন আপ",
+            dontHaveAccount: "অ্যাকাউন্ট নেই?",
+            alreadyHaveAccount: "ইতিমধ্যে অ্যাকাউন্ট আছে?",
+            required: "*"
+        },
         
         // Chatbot
         chatbot: {
