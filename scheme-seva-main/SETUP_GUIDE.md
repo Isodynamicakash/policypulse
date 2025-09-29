@@ -115,14 +115,13 @@ npm start
 2. Create API key
 3. Add to `.env` as `GEMINI_API_KEY`
 
-### 2. Bhashini API (for Language Translation)
-1. Visit [Bhashini Platform](https://bhashini.gov.in/)
-2. Register and get API credentials
-3. Add to `.env`:
-   ```env
-   BHASHINI_API_KEY=your_api_key
-   BHASHINI_USER_ID=your_user_id
-   ```
+### 2. Language Support
+The application now includes built-in multilingual support for 17 Indian languages:
+- English, Hindi, Bengali, Telugu, Marathi, Tamil, Urdu
+- Gujarati, Kannada, Malayalam, Odia, Punjabi, Assamese
+- Sanskrit, Nepali, Sindhi, Kashmiri
+
+Language switching is handled client-side with no external API dependencies.
 
 ## Available Schemes Data
 
@@ -155,11 +154,10 @@ The seed file includes comprehensive data for major Indian government schemes:
 - `GET /v2/schemes/get-scheme-by-id/:id` - Get specific scheme
 - `GET /v2/schemes/get-scheme-by-category/:category` - Get schemes by category
 
-#### Language Support (Bhashini)
-- `GET /v1/bhashini/languages` - Get supported languages
-- `POST /v1/bhashini/translate` - Translate text
-- `POST /v1/bhashini/detect-language` - Detect language
-- `GET /v1/bhashini/health` - Check Bhashini service status
+#### Language Support
+- `GET /v1/language/languages` - Get supported Indian languages
+- `GET /v1/language/validate/:code` - Validate language code
+- `GET /v1/language/health` - Check language service status
 
 #### User Management
 - `POST /v1/users/register` - Register new user
@@ -240,4 +238,4 @@ For issues and questions:
 3. Ensure all dependencies are installed
 4. Check console logs for specific error messages
 
-The application is now ready for development with comprehensive Indian government scheme data and language support through Bhashini!
+The application is now ready for development with comprehensive Indian government scheme data and built-in multilingual support for 17 Indian languages!

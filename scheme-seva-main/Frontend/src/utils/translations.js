@@ -1,4 +1,5 @@
 // Comprehensive translations for PolicyPulse application
+/* eslint-disable no-dupe-keys */
 export const translations = {
     en: {
         // Common
@@ -20,7 +21,7 @@ export const translations = {
         login: "Login",
         logout: "Logout",
         register: "Register",
-        profile: "Profile",
+        userProfile: "Profile",
         
         // Navigation
         schemes: "Schemes",
@@ -91,7 +92,7 @@ export const translations = {
         login: "लॉगइन",
         logout: "लॉगआउट",
         register: "रजिस्टर",
-        profile: "प्रोफाइल",
+        userProfile: "प्रोफाइल",
         
         // Navigation
         schemes: "योजनाएं",
@@ -162,7 +163,7 @@ export const translations = {
         login: "লগইন",
         logout: "লগআউট",
         register: "নিবন্ধন",
-        profile: "প্রোফাইল",
+        userProfile: "প্রোফাইল",
         
         // Navigation
         schemes: "প্রকল্পসমূহ",
@@ -233,7 +234,7 @@ export const translations = {
         login: "లాగిన్",
         logout: "లాగౌట్",
         register: "నమోదు",
-        profile: "ప్రొఫైల్",
+        userProfile: "ప్రొఫైల్",
         
         // Navigation
         schemes: "పథకాలు",
@@ -304,7 +305,7 @@ export const translations = {
         login: "உள்நுழை",
         logout: "வெளியேறு",
         register: "பதிவு",
-        profile: "சுயவிவரம்",
+        userProfile: "சுயவிவரம்",
         
         // Navigation
         schemes: "திட்டங்கள்",
