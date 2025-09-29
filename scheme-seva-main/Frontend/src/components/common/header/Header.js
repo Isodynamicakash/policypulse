@@ -5,6 +5,7 @@ import { UserContext } from "../../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import userAuthenticatedAxiosInstance from "../../../services/users/userAuthenticatedAxiosInstance";
 import lionlogo from "../../../assets/lionsymbol.png";
+import LanguageSelector from "../LanguageSelector";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -67,6 +68,15 @@ const Header = () => {
                 </Link>
             </nav>
             <div className="flex gap-4 items-center">
+                {/* Language Selector */}
+                <div className="hidden md:block">
+                    <LanguageSelector 
+                        compact={true} 
+                        showLabel={false}
+                        className="bg-white text-[#74B83E]"
+                    />
+                </div>
+                
                 {isUserLoggedIn ? (
                     <div className="relative" ref={profileRef}>
                         <button
@@ -112,6 +122,13 @@ const Header = () => {
                     <NavLink to="/about" icon={<Info size={18} />}>About</NavLink>
                     <NavLink to="/schemes" icon={<FileText size={18} />}>Schemes</NavLink>
                     <NavLink to="/recommendations" icon={<ShieldCheck size={18} />}>Suggests</NavLink>
+                    {/* Language Selector for mobile */}
+                    <div className="py-4 border-t border-green-600 mt-4">
+                        <LanguageSelector 
+                            showLabel={true}
+                            className="text-white"
+                        />
+                    </div>
                 </div>
             )}
         </header>
